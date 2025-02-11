@@ -30,6 +30,7 @@ jobs:
         id: scout-scan
         uses: docker/scout-action@v1
         with:
+          command: cves
           image: ${{ secrets.DOCKER_HUB_USERNAME  }}/gohello:latest
           severity: critical
 
