@@ -9,7 +9,7 @@ COPY main.go .
 
 # Build the Go application
 RUN go mod init myapp && go mod tidy
-RUN go build -o myapp
+RUN GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o myapp
 
 # Expose port 80
 EXPOSE 80

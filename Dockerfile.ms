@@ -7,10 +7,10 @@ COPY main.go .
 
 RUN go mod init myapp && go mod tidy
 
-RUN go build -o myapp
+RUN GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o myapp
 
 # Stage 2: Create the final image
-FROM alpine:3.19
+FROM scratch
 
 WORKDIR /app
 
