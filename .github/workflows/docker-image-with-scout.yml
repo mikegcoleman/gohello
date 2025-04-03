@@ -32,7 +32,6 @@ jobs:
         with:
           command: cves
           image: ${{ secrets.DOCKER_HUB_USERNAME  }}/gohello:latest
-          severity: critical
 
       - name: Check scan results
         run: |
